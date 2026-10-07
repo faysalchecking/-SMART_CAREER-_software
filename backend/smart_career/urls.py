@@ -5,9 +5,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # JWT Token endpoints
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    
+    # App endpoints
     path('api/auth/', include('smart_career.apps.authentication.urls', namespace='auth')),
     path('api/candidates/', include('smart_career.apps.candidates.urls', namespace='candidates')),
     path('api/jobs/', include('smart_career.apps.jobs.urls', namespace='jobs')),
