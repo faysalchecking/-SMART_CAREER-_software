@@ -38,40 +38,22 @@
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Windows 10/11
-- Git, Node.js, Python 3.9+, PostgreSQL, Redis
+- Windows 10+, macOS 10.14+, or Linux
+- Git, Node.js 16+, Python 3.9+, PostgreSQL 13+
 
-### Setup (see SETUP_INSTRUCTIONS.md for details)
+### Setup (5 minutes)
 
-1. **Clone Repository**
 ```bash
-git clone https://github.com/faysalchecking/-SMART_CAREER-_software
-cd "SMART CAREER software"
+git clone https://github.com/faysalchecking/-SMART_CAREER-_software.git
+cd -SMART_CAREER-_software
 ```
 
-2. **Setup Backend**
-```bash
-cd backend
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
-```
+**For complete setup instructions, see [INSTALLATION.md](./INSTALLATION.md)**
 
-3. **Setup Frontend**
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-4. **Access**
-- Admin: http://localhost:5173
-- API: http://localhost:8000/api/
-
----
+### Access
+- Frontend: http://localhost:5173
+- Backend: http://localhost:8000
+- Admin: http://localhost:8000/admin
 
 ## 📚 Documentation
 

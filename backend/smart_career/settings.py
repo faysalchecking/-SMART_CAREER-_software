@@ -160,13 +160,17 @@ CELERY_RESULT_SERIALIZER = 'json'
 DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50MB
 FILE_UPLOAD_MAX_MEMORY_SIZE = 52428800
 
-# Logging
+# Logging Configuration - Simplified for development
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'format': '[{levelname}] {asctime} {module} - {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
             'style': '{',
         },
     },
@@ -175,15 +179,17 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR.parent, 'logs', 'django.log'),
-            'formatter': 'verbose',
-        },
     },
     'root': {
-        'handlers': ['console', 'file'],
-        'level': config('LOG_LEVEL', default='INFO'),
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
     },
 }
 
