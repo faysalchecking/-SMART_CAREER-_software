@@ -26,10 +26,11 @@ INSTALLED_APPS = [
     # Third-party apps
     'rest_framework',
     'corsheaders',
-    
-    # Project apps
-    'smart_career.apps.authentication',
+    'django_filters',
+
+    # SMART CAREER apps
     'smart_career.apps.common',
+    'smart_career.apps.authentication',
     'smart_career.apps.candidates',
     'smart_career.apps.jobs',
     'smart_career.apps.applications',
